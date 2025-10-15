@@ -3,11 +3,11 @@ The Dragon Software License [Type:OS,AD,CNP,NW,IF,NS,CC] (Version:1.0)
 INFORMATION:
     License Information:
         This is a Dragon Software License, and the author of this License reserves all rights to this License.
-        License Version: 1.0           Type: OS,AD,CNP,NW,IF,NS,CC             Last Motified: [Date]
+        License Version: 1.0           Type: OS,AD,CNP,NW,IF,NS,CC             Last Motified: 2025/10/15
     Software Information:
-        Name: [Name of Software]
-        Author: [Name of Author]
-        Type: [Type of Software]
+        Name: DragonCore
+        Author: DragonMinecraftSoftwares
+        Type: API/Core
         This is an Open Source software.
 
 QUICK SUMMERY:
@@ -72,7 +72,4 @@ DETAILS:
         2. The Project is Open Source
 
     Commercial License Pricing:
-        1. xxxxx/week
-        2. xxxxx/month
-        3. xxxxx/year
-        4. xxxxx/lifetime
+        1. Not Sold Yet
