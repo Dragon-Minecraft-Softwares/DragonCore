@@ -1,17 +1,27 @@
 package DragonMCSoftwares;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import DragonUtils.logging;
 
-public final class DragonCore extends JavaPlugin {
+import java.util.logging.Level;
+
+public final class DragonCore extends JavaPlugin
+{
+    public static String chatPrefix="&k&6|&r&a[&r&l&6龙珠&r&b&n&o插件前置&r&a]&r&k&6| &r&6&l";
 
     @Override
-    public void onEnable() {
-        // Plugin startup logic
-
+    public void onEnable()
+    {
+        logging.log(Level.INFO,chatPrefix,"正在加载龙珠前置......");
+        logging.log(Level.INFO,chatPrefix,"龙珠前置加载完成!");
+        logging.log(Level.INFO,chatPrefix,"DragonMinecraftSoftwares 龙珠前置,最好的Minecraft插件前置!");
     }
 
     @Override
-    public void onDisable() {
+    public void onDisable()
+    {
         // Plugin shutdown logic
+        logging.log(Level.INFO,chatPrefix,"正在关闭龙珠前置......");
+        logging.log(Level.INFO,chatPrefix,"龙珠前置已关闭!");
     }
 }
