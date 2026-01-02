@@ -40,6 +40,14 @@ java {
     }
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 
@@ -55,4 +63,9 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
+}
+
+wrapper {
+    gradleVersion = "8.14"
+    distributionType = Wrapper.DistributionType.ALL
 }

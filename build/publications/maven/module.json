@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "DragonMCSoftwares.DragonCore",
+    "module": "DragonCore",
+    "version": "0.1-Alpha",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "DragonCore-0.1-Alpha.jar",
+          "url": "DragonCore-0.1-Alpha.jar",
+          "size": 9773,
+          "sha512": "e4c026ac0def0e370882e7bafeca363d93b800156e46dd5f222f98e7baf862e8c47057a67d09209e87994ae9a113aba6a02036bfd97f178ab2af1ea372a87406",
+          "sha256": "b511597a259af1fca1728d4fd4a5adaec38a7f0136123545d1d0e08f9618f054",
+          "sha1": "c535a4718559da45f1905c7bd200c9974d7c95aa",
+          "md5": "e9a834e6d6b7f3703d83241f548ba359"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.json",
+          "module": "json",
+          "version": {
+            "requires": "20250517"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "DragonCore-0.1-Alpha.jar",
+          "url": "DragonCore-0.1-Alpha.jar",
+          "size": 9773,
+          "sha512": "e4c026ac0def0e370882e7bafeca363d93b800156e46dd5f222f98e7baf862e8c47057a67d09209e87994ae9a113aba6a02036bfd97f178ab2af1ea372a87406",
+          "sha256": "b511597a259af1fca1728d4fd4a5adaec38a7f0136123545d1d0e08f9618f054",
+          "sha1": "c535a4718559da45f1905c7bd200c9974d7c95aa",
+          "md5": "e9a834e6d6b7f3703d83241f548ba359"
+        }
+      ]
+    },
+    {
+      "name": "shadowRuntimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "shadowed",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "DragonCore-0.1-Alpha-all.jar",
+          "url": "DragonCore-0.1-Alpha-all.jar",
+          "size": 90895,
+          "sha512": "459d57cf8abe94ac2a88da14f9d39573ba8e318476620687bfd6e9b698e7639373c79d1ae67059dfcbba4dec9ca81f8bdca98c73922130292633439b8f2a60af",
+          "sha256": "cd1e80d8aa324ccb47345a187bc65ffc2754b60384c610b1905f462429660eb7",
+          "sha1": "9f7f28ab9115a6a31aa16c5dfe9aeb32be3cbed4",
+          "md5": "a45ecc21b126d6a3ffe2d90aa297f759"
+        }
+      ]
+    }
+  ]
+}
