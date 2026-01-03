@@ -69,3 +69,7 @@ wrapper {
     gradleVersion = "8.14"
     distributionType = Wrapper.DistributionType.ALL
 }
+
+shadowJar {
+    archiveClassifier = '' // 关键！让输出文件变成 DragonCore-0.1.jar 而不是 -all.jar
+}
