@@ -43,9 +43,7 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact shadowJar{
-                classifier = ''
-            }
+            artifact shadowJar
             //from components.shadow
         }
     }
