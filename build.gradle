@@ -43,7 +43,7 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifacts shadowJar
+            artifact shadowJar
             from components.shadow
         }
     }
