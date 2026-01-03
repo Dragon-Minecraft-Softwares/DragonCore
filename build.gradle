@@ -43,8 +43,10 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact shadowJar
-            from components.shadow
+            artifact shadowJar{
+                classifier = ''
+            }
+            //from components.shadow
         }
     }
 }
@@ -69,8 +71,4 @@ processResources {
 wrapper {
     gradleVersion = "8.14"
     distributionType = Wrapper.DistributionType.ALL
-}
-
-shadowJar {
-    archiveClassifier = '' // 输出文件名变成 DragonCore-main-SNAPSHOT.jar
 }
