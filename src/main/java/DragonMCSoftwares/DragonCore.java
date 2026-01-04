@@ -9,6 +9,8 @@ public final class DragonCore extends JavaPlugin
 {
     public static String chatPrefix="&k&6|&r&a[&r&l&6龙珠&r&b&n&o插件前置&r&a]&r&k&6| &r&6&l";
 
+    public static boolean debug=false;
+
     @Override
     public void onEnable()
     {
