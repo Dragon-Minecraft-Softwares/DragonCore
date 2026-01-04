@@ -40,9 +40,7 @@ java {
     }
 }
 
-shadowJar {
-    archiveClassifier = '' // 👈 关键：这里控制文件名和 classifier
-}
+
 publishing {
     publications {
         maven(MavenPublication) {

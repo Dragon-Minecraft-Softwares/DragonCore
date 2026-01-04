@@ -1,9 +1,0 @@
-name: DragonCore
-version: '0.1-Alpha'
-main: DragonMCSoftwares.DragonCore
-api-version: '1.21'
-prefix: [ DragonCore ]
-load: STARTUP
-authors: [ Dragon Minecraft Softwares ]
-description: The core API to eveyting DMS, including DragonUtils and other develop tools.
-website: https://github.com/Dragon-Minecraft-Softwares/DragonCore
