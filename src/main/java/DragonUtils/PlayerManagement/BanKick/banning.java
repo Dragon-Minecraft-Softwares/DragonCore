@@ -2,13 +2,12 @@
 // MODIFICATION IS NOT ALLOWED
 // A Part Of DragonUtils
 
-package DragonUtils;
+package DragonUtils.PlayerManagement.BanKick;
 
 import DragonUtils.configs;
 import DragonUtils.logging;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import DragonUtils.configs;
 import DragonMCSoftwares.DragonCore;
 import java.io.File;
 import java.io.IOException;
@@ -30,6 +29,9 @@ public class banning
     static {
         logging.log(Level.INFO, "&6[DragonUtils] &r", "&aSuccessfully Loaded &bModule [banning] &r&ain &r&6&_DragonUtils by DragonMinecraftSoftwares&r&a !&r");
     }
+
+    /** 聊天消息前缀 */
+    public static String chatPrefix="&k&6|&r&a[&r&l&6诛仙&r&b&n&o反作弊系统&r&a]&r&k&6| &r&6&l";
 
     /** 封禁消息前缀 */
     public static String banPrefix ="&6&k|&a&k[&r&l&6诛仙&r&b&n&o反作弊系统&r&a&k]&6&k|&r";
