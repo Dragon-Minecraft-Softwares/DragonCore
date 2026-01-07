@@ -7,6 +7,7 @@ package DragonUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import java.lang.reflect.Array;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -78,12 +79,6 @@ public class utils
         formatstring = formatstring.replace("ss", String.format("%02d", seconds));
         return formatstring;
     }
-    
-    public static String getPlayerIp(Player player)
-    {
-        if(player.getAddress()!=null) return player.getAddress().getAddress().getHostAddress();
-        return "null";
-    }
 
     // atm machine(jcyang20) 参与的杰作,他修复了这段代码中的一个重大BUG
     public static long parseDurationToMillis(String durationStr) {
@@ -108,5 +103,22 @@ public class utils
                 + hours * 60 * 60 * 1000
                 + minutes * 60 * 1000
                 + seconds * 1000;
+    }
+
+    /**
+     * 合并两个数组
+     * @param a 数组a
+     * @param b 数组b
+     * @return 合并后的数组
+     */
+    public static <T> T[] mergeArrays(T[] a, T[] b) {
+        @SuppressWarnings("unchecked")
+        T[] result = (T[]) Array.newInstance(
+                a.getClass().getComponentType(),
+                a.length + b.length
+        );
+        System.arraycopy(a, 0, result, 0, a.length);
+        System.arraycopy(b, 0, result, a.length, b.length);
+        return result;
     }
 }
