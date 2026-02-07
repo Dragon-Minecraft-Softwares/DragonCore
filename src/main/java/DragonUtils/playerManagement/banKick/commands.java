@@ -1,22 +1,24 @@
 // 命令处理
 
-package DragonUtils.PlayerManagement.BanKick;
+package DragonUtils.playerManagement.banKick;
 
-import DragonUtils.logging;
+import DragonUtils.interfaceControl.logging;
+import DragonUtils.playerManagement.getPlayerInfo.getInfo;
 import DragonUtils.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import DragonUtils.PlayerManagement.Permissions.basicperm;
+import DragonUtils.playerManagement.permissions.basicPerm;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static DragonUtils.utils.plugin;
-import static DragonUtils.PlayerManagement.BanKick.banning.banlist;
+import static DragonUtils.playerManagement.banKick.banning.banList;
 import static DragonMCSoftwares.DragonCore.debug;
 
 import java.util.Objects;
@@ -37,9 +39,9 @@ public class commands
     public static boolean commandInit()
     {
         // 注册权限
-        basicperm.registerPermission("godkilleracmc.bancontrol.ban","允许操作封禁","");
-        basicperm.registerPermission("godkilleracmc.bancontrol.unban","允许操作解封","");
-        basicperm.registerPermission("godkilleracmc.system.debug","允许操作调试","");
+        basicPerm.registerPermission("godkilleracmc.bancontrol.ban","允许操作封禁","");
+        basicPerm.registerPermission("godkilleracmc.bancontrol.unban","允许操作解封","");
+        basicPerm.registerPermission("godkilleracmc.system.debug","允许操作调试","");
         // 注册命令
         try
         {
@@ -92,28 +94,28 @@ public class commands
                         // 计算封禁时长（秒转毫秒）
                         long dut = 0;
                         if (args.length >= 3) dut = Long.parseLong(args[2]) * 1000;
-                        if(banedplayer!=null) banning.ban(banlist,args[0],utils.getPlayerIp(banedplayer),0,dut,args[1],false,System.currentTimeMillis());
-                        sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&a&l成功将玩家 &e"+args[0]+" &a以&b "+args[1]+" &a为理由封印&9 "+args[2]+" &a秒&r"));
+                        if(banedplayer!=null) banning.ban(banList,args[0], getInfo.getPlayerIp(banedplayer),0,dut,args[1],false,System.currentTimeMillis());
+                        sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&a&l成功将玩家 &e"+args[0]+" &a以&b "+args[1]+" &a为理由封印&9 "+args[2]+" &a秒&r"));
                         return true;
                     }
                     catch (ArrayIndexOutOfBoundsException e)
                     {
-                        sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&4&l缺少参数！&r"));
+                        sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&4&l缺少参数！&r"));
                         return false;
                     }
                     catch (NumberFormatException e)
                     {
-                        sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&4&l参数格式错误！&r"));
+                        sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&4&l参数格式错误！&r"));
                         return false;
                     }
                     catch (Exception e)
                     {
-                        sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&4&l未知错误！: " + e + "&r"));
+                        sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&4&l未知错误！: " + e + "&r"));
                         return false;
                     }
                 }
                 else {
-                    sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&r&6&l诛啥仙啊,你看你配吗??"));
+                    sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&r&6&l诛啥仙啊,你看你配吗??"));
                 }
             }
             return false;
@@ -162,7 +164,7 @@ public class commands
                 {
                     for(String Person:args)
                     {
-                        for (banning.BanListType banlistThing:banlist)
+                        for (banning.banListType banlistThing: banList)
                         {
                             if(banlistThing.name.equals(Person))
                             {
@@ -175,16 +177,16 @@ public class commands
                 }
                 catch(ArrayIndexOutOfBoundsException e)
                 {
-                    sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&4&l缺少参数！&r"));
+                    sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&4&l缺少参数！&r"));
                 }
                 catch (Exception e)
                 {
-                    sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix + "&4&l未知错误！&r"));
+                    sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&4&l未知错误！&r"));
                 }
             }
             else
             {
-                sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix+"&r&6&l解啥封印啊,你看你配吗??"));
+                sender.sendMessage(logging.changeColorcode(banning.chatPrefix+"&r&6&l解啥封印啊,你看你配吗??"));
             }
             return false;
         }
@@ -197,7 +199,7 @@ public class commands
             if (sender.hasPermission("godkilleracmc.bancontrol.unban"))
             {
                 List<String> Players=new ArrayList<String>();
-                for(banning.BanListType banlistThing:banlist)
+                for(banning.banListType banlistThing: banList)
                 {
                     Players.add(banlistThing.name);
                 }
@@ -218,7 +220,7 @@ public class commands
             }
             else
             {
-                sender.sendMessage(logging.ChangeColorcode(banning.chatPrefix+"&r&6&lPermission Denied"));
+                sender.sendMessage(logging.changeColorcode(banning.chatPrefix+"&r&6&lPermission Denied"));
             }
             return false;
         }

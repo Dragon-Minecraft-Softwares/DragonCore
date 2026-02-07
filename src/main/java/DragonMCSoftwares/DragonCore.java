@@ -1,8 +1,9 @@
 package DragonMCSoftwares;
 
+import DragonUtils.playerManagement.banKick.banning;
 import DragonUtils.utils;
 import org.bukkit.plugin.java.JavaPlugin;
-import DragonUtils.logging;
+import DragonUtils.interfaceControl.logging;
 
 import java.util.logging.Level;
 
@@ -23,6 +24,10 @@ public final class DragonCore extends JavaPlugin
         logging.log(Level.INFO,chatPrefix,"正在加载龙珠前置......");
         logging.log(Level.INFO,chatPrefix,"正在初始化龙珠前置......");
         utils.plugin=this;
+        DragonUtils.playerManagement.getPlayerInfo.getInfo.init();
+        // DragonUtils.playerManagement.banKick.banning.init(banning.banList,banning.banInfoList); 有Bug
+        // DragonUtils.pluginData.configs.init(configlist); 未制作ConfigList
+        DragonUtils.playerManagement.banKick.commands.commandInit();
         logging.log(Level.INFO,chatPrefix,"龙珠前置加载完成!");
         logging.log(Level.INFO,chatPrefix,"DragonMinecraftSoftwares 龙珠前置,最好的Minecraft插件前置!");
     }

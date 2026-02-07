@@ -7,3 +7,15 @@ load: STARTUP
 authors: [ Dragon Minecraft Softwares ]
 description: The core API to eveyting DMS, including DragonUtils and other develop tools.
 website: https://github.com/Dragon-Minecraft-Softwares/DragonCore
+commands:
+  ban:
+    description: "封禁玩家"
+    usage: "/ban <玩家> <原因> <时间>(秒,永封0)"
+    aliases: ["totalban","ban-ip","tempban"]
+  unban:
+    description: "解封玩家"
+    usage: "/unban <玩家>"
+    aliases: ["unban-ip"]
+  gacdebug:
+    description: "开启/关闭调试模式"
+    usage: "/gacdebug"

@@ -1,17 +1,17 @@
-package DragonUtils.PlayerManagement.Permissions;
+package DragonUtils.playerManagement.permissions;
 
-import DragonUtils.logging;
+import DragonUtils.interfaceControl.logging;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import java.util.logging.Level;
 
 import static DragonUtils.utils.plugin;
 
-public class basicperm
+public class basicPerm
 {
     static
     {
-        logging.log(Level.INFO,"&6[DragonUtils] &r","&aSuccessfully Loaded &bModule [Permissions] &r&ain &r&6&_DragonUtils by DragonMinecraftSoftwares&r&a !&r");
+        logging.log(Level.INFO,"&6[DragonUtils] &r","&aSuccessfully Loaded &bModule [permissions] &r&ain &r&6&_DragonUtils by DragonMinecraftSoftwares&r&a !&r");
     }
 
     /*

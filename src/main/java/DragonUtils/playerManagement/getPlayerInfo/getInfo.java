@@ -1,9 +1,8 @@
-package DragonUtils.PlayerManagement.GetPlayerInfo;
+package DragonUtils.playerManagement.getPlayerInfo;
 
-import static DragonUtils.utils.plugin;
 import static org.bukkit.Bukkit.getOfflinePlayers;
 import static org.bukkit.Bukkit.getOnlinePlayers;
-import DragonUtils.logging;
+import DragonUtils.interfaceControl.logging;
 import DragonUtils.utils;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -13,13 +12,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 
-public class getinfo
+public class getInfo
 {
+    public static List<OfflinePlayer> offlinePlayerList;
     static
     {
-        logging.log(Level.INFO,"&6[DragonUtils] &r","&aSuccessfully Loaded &bModule [GetPlayerInfo] &r&ain &r&6&_DragonUtils by DragonMinecraftSoftwares&r&a !&r");
+        logging.log(Level.INFO,"&6[DragonUtils] &r","&aSuccessfully Loaded &bModule [getPlayerInfo] &r&ain &r&6&_DragonUtils by DragonMinecraftSoftwares&r&a !&r");
     }
-
+    /*
+     * 初始化
+     */
+    public static void init()
+    {
+        logging.log(Level.INFO,"&6[DragonUtils] &r","&a正在初始化离线玩家列表......");
+        offlinePlayerList=Arrays.asList(getOfflinePlayers());
+    }
     /*
      * 获取玩家对象
      * @param name 玩家名称
@@ -75,8 +82,9 @@ public class getinfo
      * 获取玩家IP
      * @param player 玩家对象
      */
-    public static String getPlayerIp(Player player)
+    public static String getPlayerIp(String player)
     {
+        if()
         if(player.getAddress()!=null) return player.getAddress().getAddress().getHostAddress();
         return "null";
     }
@@ -93,7 +101,7 @@ public class getinfo
      * 获取玩家在线状态
      * @param player 玩家对象
      */
-    public static boolean getPlayerOnline(Player player)
+    public static boolean getPlayerOnline(String player)
     {
         return player.isOnline();
     }
@@ -141,7 +149,7 @@ public class getinfo
          }
          else
          {
-             return utils.mergeArrays(getOnlinePlayers().stream().map(Player::getName).toArray(String[]::new),(List<String>) Arrays.stream(getOfflinePlayers()).map(OfflinePlayer::getName));
+             return getPlayersName("Online");
          }
     }
 }
