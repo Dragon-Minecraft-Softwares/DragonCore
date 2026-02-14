@@ -3,8 +3,7 @@
 package DragonUtils.playerManagement.banKick;
 
 import DragonUtils.interfaceControl.logging;
-import DragonUtils.playerManagement.getPlayerInfo.getInfo;
-import DragonUtils.utils;
+import DragonUtils.playerManagement.playerBasic;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -94,7 +93,7 @@ public class commands
                         // 计算封禁时长（秒转毫秒）
                         long dut = 0;
                         if (args.length >= 3) dut = Long.parseLong(args[2]) * 1000;
-                        if(banedplayer!=null) banning.ban(banList,args[0], getInfo.getPlayerIp(banedplayer),0,dut,args[1],false,System.currentTimeMillis());
+                        if(banedplayer!=null) banning.ban(banList,args[0], playerBasic.getPlayerIp(banedplayer),0,dut,args[1],false,System.currentTimeMillis());
                         sender.sendMessage(logging.changeColorcode(banning.chatPrefix + "&a&l成功将玩家 &e"+args[0]+" &a以&b "+args[1]+" &a为理由封印&9 "+args[2]+" &a秒&r"));
                         return true;
                     }
